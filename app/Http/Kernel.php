@@ -3,6 +3,10 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+//phạm vi hoạt động của midleware:
+//1.global: sd tất cả ứng dụng
+//2.group: sd cho 1 số ứng dụng
+//3/route midleware: ứng dụng cho 1 route nào đó
 
 class Kernel extends HttpKernel
 {
@@ -60,6 +64,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'myCheckAge'=>\App\Http\Middleware\CheckAge::class,
+        'myCheckSNT'=>\App\Http\Middleware\CheckSNT::class,
+        'testLogin'=>\App\Http\Middleware\ExampleTest::class
+
     ];
 
     /**
